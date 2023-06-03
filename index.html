@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de textos</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@300&family=Silkscreen:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="vista">
+        <header>
+            <h1 class="logo">
+                <img src="img/logo.png" alt="">
+            </h1>
+        </header>
+        <main>
+
+            <!-- CONSULTA -->
+            
+            <section class="formulario">
+                <form>
+                    <textarea class="text" name="" id="" cols="30" rows="10" placeholder="Ingrese el texto aquí"></textarea>
+                    <fieldset class="advertence">
+                        <img src="img/exclamation.png" alt="">
+                        <p>Solo letras minusculas y sin acento</p>
+                    </fieldset>
+                    
+                    <fieldset class="botones">
+                        <button>Encriptar</button>
+                        <button>Desencriptar</button>
+                    </fieldset>
+                </form>
+
+            </section>
+
+            <!-- RESPUESTA -->
+
+            <section class="mensajEncriptado">
+                <div class="escriptado">
+                    <div class="of">
+                        <img class="imgMunieco" src="img/Muñeco.png" alt="imagen muñeco con lupa">
+                        <h3>Ningún mensaje fue encontrado</h3>
+                        <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+                    </div>
+                    
+                    <div class="on">
+                        <textarea cols="30" rows="28">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae illum perspiciatis ad ipsam commodi, aspernatur incidunt eveniet vero dolores distinctio nam earum corrupti ut quae deleniti quam nobis. Distinctio, reprehenderit!</textarea>
+                        <button>Copiar</button>
+                    </div>
+                    
+                </div>
+                
+            </section>
+        </main>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
