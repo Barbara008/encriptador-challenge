@@ -89,7 +89,7 @@ main{
 
 
 .on{
-    /* display: none; */
+    display: none;
 }
 
 .yes-text p{
@@ -119,7 +119,7 @@ main{
 }
 
 .of{
-    display: none;
+    /* display: none; */
 }
 
 .no-text{
@@ -191,5 +191,63 @@ main{
 
     .no-img{
         display: none;
+    }
+}
+
+
+/* responsive desing tablet 800px+ */
+
+@media screen and (min-width: 461px) and (max-width: 860px){
+    .vista{
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .logo{
+        width: 150px;
+        height: 150px;
+    }
+
+    main{
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+
+    .formulario .text{
+        width: 90%;
+        display: block;
+        margin: 5% auto 20px;
+        font-size: 28px;
+    }
+
+    .advertence > img, p{
+        margin: 0 0 24px 20px;
+    }
+
+    .advertence, .botones{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .botones button{
+        margin: 0 auto;
+    }
+
+    .no-img{
+        display: none;
+    }
+
+    .escriptado{
+        height: auto;
+        border: none;
+
+    }
+
+    .yes-text > p{
+        margin: 10px auto;
+    }
+
+    .yes-text > button{
+        margin: 10px auto 0;
     }
 }
