@@ -88,7 +88,7 @@ main{
 }
 
 
-.on{
+.of{
     display: none;
 }
 
@@ -116,10 +116,6 @@ main{
     position: relative;
     width: 100%;
     margin: 25% auto 5%;
-}
-
-.of{
-    /* display: none; */
 }
 
 .no-text{
