@@ -92,7 +92,7 @@ main{
     display: none;
 }
 
-.yes-text p{
+.yes-text textarea{
     display: inline-block;
     width: 100%;
     height: 400px;
@@ -101,6 +101,7 @@ main{
     font-size: 18px;
     border: none;
     line-height: 1.5;
+    outline: none;
 }
 
 .yes-text > button{
@@ -239,7 +240,7 @@ main{
 
     }
 
-    .yes-text > p{
+    .yes-text > textarea{
         margin: 10px auto;
     }
 

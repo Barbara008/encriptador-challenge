@@ -3,7 +3,8 @@ let txtEncriptar;
 let noText = document.querySelector('.no-text');
 let yesText = document.querySelector('.yes-text');
 let respuesta = document.querySelector('.respuesta');
-
+respuesta.readOnly = true;
+let btnCopiar = document.querySelector('.copiar');
 // ENCRIPTADOR
 
 /**
@@ -12,7 +13,11 @@ let respuesta = document.querySelector('.respuesta');
 
 function encriptador(texto) {
 
-    return texto.replaceAll(/a/gi,'ai').replaceAll(/e/gi,'enter').replaceAll(/i/gi,'imes').replaceAll(/o/gi,'ober').replaceAll(/u/gi,'ufat');
+    return texto.replaceAll(/a/gi,'ai')
+                .replaceAll(/e/gi,'enter')
+                .replaceAll(/i/gi,'imes')
+                .replaceAll(/o/gi,'ober')
+                .replaceAll(/u/gi,'ufat');
 
 }
 
@@ -28,6 +33,23 @@ function campoLleno() {
     yesText.classList.remove('of')
 }
 
+
+/**
+ * Copia el texto dentro la seccion 'mensajEncriptad'
+ */
+function copiarTxt(){
+    
+    // Selecciona el contenido del campo
+    
+    respuesta.select();
+
+    // Copia el texto seleccionado
+    document.execCommand("copy");
+   
+}
+
+
+
 btnEncriptar.addEventListener('click',(e)=>{
     e.preventDefault();
     txtEncriptar = document.querySelector('.text').value;
@@ -41,6 +63,10 @@ btnEncriptar.addEventListener('click',(e)=>{
     
 })
 
+
+// Cipiado de texto:
+
+btnCopiar.addEventListener('click',copiarTxt)
 
 // DESENCRIPTADOR
 
