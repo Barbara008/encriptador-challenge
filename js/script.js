@@ -1,4 +1,5 @@
 let btnEncriptar = document.querySelector('.encriptar');
+let btnDesencriptar = document.querySelector('.desencriptar');
 let txtEncriptar;
 let noText = document.querySelector('.no-text');
 let yesText = document.querySelector('.yes-text');
@@ -40,7 +41,6 @@ function campoLleno() {
 function copiarTxt(){
     
     // Selecciona el contenido del campo
-    
     respuesta.select();
 
     // Copia el texto seleccionado
@@ -48,17 +48,24 @@ function copiarTxt(){
    
 }
 
+function extraerTxt(){
+    txtEncriptar = document.querySelector('.text').value;
+    return txtEncriptar;
+}
 
+/**
+ * funcion que conecta el btn 'Encriptar' con la funcion 'encriptador'
+ */
 
 btnEncriptar.addEventListener('click',(e)=>{
     e.preventDefault();
-    txtEncriptar = document.querySelector('.text').value;
+    let txt = extraerTxt()
     
-    if (txtEncriptar == "") {
+    if (txt == "") {
         campoVacio()
     }else{
         campoLleno()
-        respuesta.innerHTML = encriptador(txtEncriptar);
+        respuesta.innerHTML = encriptador(txt);
     }
     
 })
@@ -71,12 +78,29 @@ btnCopiar.addEventListener('click',copiarTxt)
 // DESENCRIPTADOR
 
 /**
- * Retorna desencriptado el mensaje que fue previamente encriptado
+ * Toma el texto encriptado y lo retorna desencriptado usando
+ * la inversion de los parametros en el que se encriptó
  */
 
-// function desencriptador() {
-//     let fraseDesencriptada = fraseCambiada.replaceAll(/ufat/gi,"u").replaceAll(/ober/gi,'o').replaceAll(/imes/gi,'i').replaceAll(/enter/gi,'e').replaceAll(/ai/gi,'a')
+function desencriptador(texto) {
+    return texto.replaceAll(/ufat/gi,"u")
+                        .replaceAll(/ober/gi,'o')
+                        .replaceAll(/imes/gi,'i')
+                        .replaceAll(/enter/gi,'e')
+                        .replaceAll(/ai/gi,'a');
 
-//     return fraseDesencriptada;
+}
 
-// }
+/**
+ * funcion que conecta el btn 'Desencriptar' con la funcion 'desencriptador'
+ */
+btnDesencriptar.addEventListener('click',(e)=>{
+    e.preventDefault();
+    let txt = extraerTxt();
+    if (txt == "") {
+        campoVacio();
+    }else{
+        campoLleno();
+        respuesta.innerHTML = desencriptador(txt)
+    }
+})
