@@ -6,6 +6,14 @@ let yesText = document.querySelector('.yes-text');
 let respuesta = document.querySelector('.respuesta');
 respuesta.readOnly = true;
 let btnCopiar = document.querySelector('.copiar');
+
+let span = document.querySelector('.spanAdevertencia');
+
+// expresiones regulares validacion de texto:
+
+let regMayus = /[A-Z]/g;
+let regAcent = /[áéíóúüëäö]/g;
+
 // ENCRIPTADOR
 
 /**
@@ -62,9 +70,13 @@ btnEncriptar.addEventListener('click',(e)=>{
     let txt = extraerTxt()
     
     if (txt == "") {
-        campoVacio()
+        campoVacio();
+    }else if(regMayus.test(txt)||regAcent.test(txt)){
+        span.classList.add('spanOn');
+        campoVacio();
     }else{
-        campoLleno()
+        span.classList.remove('spanOn');
+        campoLleno();
         respuesta.innerHTML = encriptador(txt);
     }
     
@@ -99,8 +111,12 @@ btnDesencriptar.addEventListener('click',(e)=>{
     let txt = extraerTxt();
     if (txt == "") {
         campoVacio();
+    }else if(regMayus.test(txt)||regAcent.test(txt)){
+        span.classList.add('spanOn');
+        campoVacio();
     }else{
         campoLleno();
         respuesta.innerHTML = desencriptador(txt)
     }
 })
+

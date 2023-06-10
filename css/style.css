@@ -67,6 +67,27 @@ main{
     border: 1px solid #0A3871;
 }
 
+.spanAdevertencia{
+    border: 1px solid red;
+    display: none;
+    width: 80%;
+    margin: 10px auto 0;
+    padding: 10px 0;
+    border-radius: 14px;
+    background: rgba(255, 0, 0, .2);
+}
+
+.spanAdevertencia p{
+    margin: 0 auto;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
+.spanOn{
+    display: block;
+}
+
 /* RESPUESTA */
 
 .mensajEncriptado{
