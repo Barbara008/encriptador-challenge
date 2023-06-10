@@ -115,6 +115,7 @@ btnDesencriptar.addEventListener('click',(e)=>{
         span.classList.add('spanOn');
         campoVacio();
     }else{
+        span.classList.remove('spanOn');
         campoLleno();
         respuesta.innerHTML = desencriptador(txt)
     }
